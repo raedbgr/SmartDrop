@@ -1,13 +1,14 @@
 import '/imports.dart';
 
 class DashboardPage extends StatefulWidget {
+  const DashboardPage({super.key});
+
   @override
-  _DashboardPageState createState() => _DashboardPageState();
+  State<DashboardPage> createState() => _DashboardPageState();
 }
 
 class _DashboardPageState extends State<DashboardPage> {
-  double temperature = 37.0; // Example temperature value
-  double humidity = 65.0; // Example humidity value
+  final DashboardController dashCtrl = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +17,11 @@ class _DashboardPageState extends State<DashboardPage> {
       appBar: AppBar(
         titleSpacing: 25,
         backgroundColor: const Color(0xFF242529),
-        title: const Text(
-            "Dashboard",
+        title: const Text("Dashboard",
             style: TextStyle(
                 color: Color(0xfffdfefe),
                 fontSize: 24,
-                fontWeight: FontWeight.w300)
-        ),
+                fontWeight: FontWeight.w300)),
       ),
       body: SafeArea(
         child: Padding(
@@ -45,7 +44,8 @@ class _DashboardPageState extends State<DashboardPage> {
                       Column(
                         spacing: 10,
                         children: [
-                          TemperatureGauge(temperature: temperature),
+                          Gauge(isTemp: true),
+                          // TemperatureGauge(temperature: temperature),
                           const Text("Temperature",
                               style: TextStyle(
                                   color: Color(0xfffdfefe),
@@ -57,7 +57,8 @@ class _DashboardPageState extends State<DashboardPage> {
                       Column(
                         spacing: 10,
                         children: [
-                          HumidityGauge(humidity: humidity),
+                          Gauge(isTemp: false),
+                          // HumidityGauge(humidity: humidity),
                           const Text("Humidity",
                               style: TextStyle(
                                   color: Color(0xfffdfefe),
@@ -70,6 +71,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 ),
               ),
               // Water Consumption Graph
+              // Water Consumption Graph
               Card(
                 color: const Color(0xFF35373b),
                 shape: RoundedRectangleBorder(
@@ -77,15 +79,20 @@ class _DashboardPageState extends State<DashboardPage> {
                 child: Padding(
                   padding: const EdgeInsets.all(20),
                   child: Column(
+                    spacing: 50,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      const Text("Water Consumption",
-                          style: TextStyle(
-                              color: Color(0xfffdfefe),
-                              fontSize: 18,
-                              fontWeight: FontWeight.w300)),
-                      WaterConsumptionChart(
-                          waterConsumption: const [15, 20, 12, 30, 25, 18, 22]),
+                      const Text(
+                        "Water Consumption",
+                        style: TextStyle(
+                            color: Color(0xfffdfefe),
+                            fontSize: 18,
+                            fontWeight: FontWeight.w300),
+                      ),
+                      SizedBox(
+                          height: 200,
+                          child: WaterConsumptionChart(
+                              waterConsumption: dashCtrl.waterConsumption)),
                     ],
                   ),
                 ),
