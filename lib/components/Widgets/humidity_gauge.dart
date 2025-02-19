@@ -31,7 +31,7 @@ class HumidityGauge extends StatelessWidget {
           child: Center(
             child: Text(
               '${humidity.toInt()}%',
-              style: const TextStyle(fontSize: 32, fontWeight: FontWeight.w300, color: Colors.white),
+              style: const TextStyle(fontSize: 28, fontWeight: FontWeight.w300, color: Colors.white),
             ),
           ),
         ),

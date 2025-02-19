@@ -49,7 +49,7 @@ class _DashboardPageState extends State<DashboardPage> {
                           const Text("Temperature",
                               style: TextStyle(
                                   color: Color(0xfffdfefe),
-                                  fontSize: 18,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.w300)),
                         ],
                       ),
@@ -61,7 +61,7 @@ class _DashboardPageState extends State<DashboardPage> {
                           const Text("Humidity",
                               style: TextStyle(
                                   color: Color(0xfffdfefe),
-                                  fontSize: 18,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.w300)),
                         ],
                       ),

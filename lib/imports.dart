@@ -2,7 +2,6 @@ export 'package:flutter/material.dart';
 export 'dart:math';
 export 'package:get/get.dart';
 export 'package:fl_chart/fl_chart.dart';
-export 'package:syncfusion_flutter_gauges/gauges.dart';
 export 'routes.dart';
 export 'views/dashboard.dart';
 export 'components/Widgets/water_consumption_chart.dart';
