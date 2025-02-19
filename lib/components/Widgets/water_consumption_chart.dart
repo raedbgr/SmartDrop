@@ -60,7 +60,7 @@ class WaterConsumptionChart extends StatelessWidget {
       padding: const EdgeInsets.only(top: 8.0),
       child: Text(
         days[value.toInt() % days.length], // Cycle through days
-        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
       ),
     );
   }
