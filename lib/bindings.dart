@@ -4,5 +4,6 @@ class MyBindings extends Bindings {
   @override
   void dependencies() {
     Get.put(DashboardController());
+    Get.put(NavigationController());
   }
 }
