@@ -17,9 +17,9 @@ class _NavigationPageState extends State<NavigationPage> {
   @override
   Widget build(BuildContext context) {
     return Obx(
-          () => Scaffold(
+      () => Scaffold(
         key: _scaffoldKey,
-            backgroundColor: const Color(0xFF242529),
+        backgroundColor: const Color(0xFF242529),
         appBar: AppBar(
           backgroundColor: const Color(0xFF242529),
           actions: [
