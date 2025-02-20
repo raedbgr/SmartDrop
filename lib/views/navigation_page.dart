@@ -20,6 +20,18 @@ class _NavigationPageState extends State<NavigationPage> {
           () => Scaffold(
         key: _scaffoldKey,
             backgroundColor: const Color(0xFF242529),
+        appBar: AppBar(
+          backgroundColor: const Color(0xFF242529),
+          actions: [
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.notifications_rounded,
+                  color: Color(0xfffdfefe),
+                  size: 30,
+                )),
+          ],
+        ),
         body: controller.getScreen(controller.selectedPage.value, _scaffoldKey),
         bottomNavigationBar: MyNavBar(),
       ),

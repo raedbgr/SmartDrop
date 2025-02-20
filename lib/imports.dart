@@ -10,5 +10,6 @@ export 'views/plants.dart';
 export 'components/navbar.dart';
 export 'components/water_consumption_chart.dart';
 export 'components/gauge.dart';
+export 'components/custom_card.dart';
 export 'controllers/navigation_controller.dart';
 export 'controllers/dashboard_controller.dart';
