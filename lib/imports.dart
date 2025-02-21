@@ -3,6 +3,8 @@ export 'package:flutter/material.dart';
 export 'dart:math';
 export 'package:get/get.dart';
 export 'package:fl_chart/fl_chart.dart';
+export 'package:firebase_auth/firebase_auth.dart';
+export 'package:firebase_core/firebase_core.dart';
 
 // misc
 export 'routes.dart';

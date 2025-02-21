@@ -22,15 +22,14 @@ class _NavigationPageState extends State<NavigationPage> {
         backgroundColor: const Color(0xFF242529),
         appBar: AppBar(
           backgroundColor: const Color(0xFF242529),
-          actions: [
-            IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.notifications_rounded,
-                  color: Color(0xfffdfefe),
-                  size: 30,
-                )),
-          ],
+          title: const Text(
+            'Smart Drop',
+            style: TextStyle(
+              color: Color(0xFFfdfefe),
+              fontSize: 26,
+              fontWeight: FontWeight.w300,
+            ),
+          ),
         ),
         body: SafeArea(child: controller.getScreen(controller.selectedPage.value, _scaffoldKey)),
         bottomNavigationBar: MyNavBar(),

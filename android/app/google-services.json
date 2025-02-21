@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "390991137651",
+    "project_id": "smart-drop-54a2d",
+    "storage_bucket": "smart-drop-54a2d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390991137651:android:e10e3fc3b5b2c0f2a85306",
+        "android_client_info": {
+          "package_name": "com.example.smart_drop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_BLzZBmFuOU1y6EFftqdcAE3CkbbEJEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

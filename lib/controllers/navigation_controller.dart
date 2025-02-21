@@ -1,11 +1,11 @@
 import '/imports.dart';
 
 class NavigationController extends GetxController {
-  final RxString selectedPage = '/home'.obs; // Initialize with default page
+  final RxString selectedPage = '/dashboard'.obs; // Initialize with default page
 
   Widget getScreen(String page, GlobalKey<ScaffoldState> scaffoldKey) {
     switch (page) {
-      case '/home':
+      case '/dashboard':
         return DashboardPage(scaffoldKey: scaffoldKey);
       case '/plants':
         return PlantsPage(scaffoldKey: scaffoldKey);
@@ -26,7 +26,7 @@ class NavigationController extends GetxController {
       case '/plants':
         return 1;
       default:
-        return 0; // Default to Home page
+        return 0; // Default to Dashboard page
     }
   }
 
