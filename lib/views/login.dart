@@ -16,7 +16,7 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                "Login",
+                "Smart Drop",
                 style: TextStyle(
                   color: Color(0xfffdfefe),
                   fontSize: 30,

@@ -3,7 +3,12 @@ import 'imports.dart';
 class MyBindings extends Bindings {
   @override
   void dependencies() {
-    Get.put(DashboardController());
+    // Created at start
+    Get.put(AuthController());
     Get.put(NavigationController());
+
+    // Created when needed
+    Get.lazyPut<DashboardController>(() => DashboardController());
+    Get.lazyPut<PlantsController>(() => PlantsController());
   }
 }

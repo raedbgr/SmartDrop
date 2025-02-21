@@ -32,7 +32,7 @@ class _NavigationPageState extends State<NavigationPage> {
                 )),
           ],
         ),
-        body: controller.getScreen(controller.selectedPage.value, _scaffoldKey),
+        body: SafeArea(child: controller.getScreen(controller.selectedPage.value, _scaffoldKey)),
         bottomNavigationBar: MyNavBar(),
       ),
     );

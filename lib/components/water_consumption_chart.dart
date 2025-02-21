@@ -15,18 +15,17 @@ class WaterConsumptionChart extends StatelessWidget {
           BarChartData(
             barGroups: List.generate(
               waterConsumption.length,
-                  (index) =>
-                  BarChartGroupData(
-                    x: index,
-                    barRods: [
-                      BarChartRodData(
-                        toY: waterConsumption[index],
-                        color: const Color(0xff006fff),
-                        width: 15,
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                    ],
+              (index) => BarChartGroupData(
+                x: index,
+                barRods: [
+                  BarChartRodData(
+                    toY: waterConsumption[index],
+                    color: const Color(0xff006fff),
+                    width: 15,
+                    borderRadius: BorderRadius.circular(4),
                   ),
+                ],
+              ),
             ),
             titlesData: FlTitlesData(
               leftTitles: AxisTitles(
@@ -50,7 +49,13 @@ class WaterConsumptionChart extends StatelessWidget {
                   showTitles: true,
                   getTitlesWidget: (value, meta) {
                     List<String> days = [
-                      "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"
+                      "Mon",
+                      "Tue",
+                      "Wed",
+                      "Thu",
+                      "Fri",
+                      "Sat",
+                      "Sun"
                     ];
                     return Text(
                       days[value.toInt()],
