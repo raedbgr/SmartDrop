@@ -1,11 +1,11 @@
 import '/imports.dart';
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   final AuthController authCtrl = Get.find<AuthController>();
 
   @override
@@ -46,30 +46,24 @@ class _LoginPageState extends State<LoginPage> {
                         obscureText: true,
                         controller: authCtrl.passwordController,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              Get.toNamed('/forgot-password');
-                            },
-                            child: const Text(
-                              'Forgot Password?',
-                              style: TextStyle(
-                                color: Color(0xffb3c3c0),
-                                fontSize: 16,
-                                fontWeight: FontWeight.w300,
-                              ),
-                            ),
-                          ),
-                        ],
+                      InputField(
+                        hintText: 'Confirm Password',
+                        obscureText: true,
+                        controller: authCtrl.confirmPasswordController,
                       ),
                       GestureDetector(
                         onTap: () {
-                          authCtrl.signIn(
-                            authCtrl.emailController.text,
-                            authCtrl.passwordController.text,
-                          );
+                          if (authCtrl.passwordController.text !=
+                              authCtrl.confirmPasswordController.text) {
+                            Get.snackbar("Error", "Passwords do not match",
+                                snackPosition: SnackPosition.BOTTOM);
+                            return;
+                          } else {
+                            authCtrl.register(
+                              authCtrl.emailController.text,
+                              authCtrl.passwordController.text,
+                            );
+                          }
                         },
                         child: Container(
                           padding: const EdgeInsets.all(10),
@@ -83,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ),
                           child: const Text(
-                            'Login',
+                            'Register',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Color(0xfffdfefe),
@@ -110,7 +104,7 @@ class _LoginPageState extends State<LoginPage> {
                               width: 30,
                               height: 30,
                             ),
-                            const Text('Login with Google',
+                            const Text('Register with Google',
                                 style: TextStyle(
                                   color: Color(0xfffdfefe),
                                   fontSize: 18,
@@ -123,7 +117,7 @@ class _LoginPageState extends State<LoginPage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text('Not a member? ',
+                          const Text('Already a member? ',
                               style: TextStyle(
                                 color: Color(0xffb3c3c0),
                                 fontSize: 16,
@@ -131,9 +125,9 @@ class _LoginPageState extends State<LoginPage> {
                               )),
                           GestureDetector(
                             onTap: () {
-                              Get.toNamed('/register');
+                              Get.offAllNamed('/login');
                             },
-                            child: const Text('Register now',
+                            child: const Text('Login here',
                                 style: TextStyle(
                                   color: Color(0xfffdfefe),
                                   fontSize: 16,

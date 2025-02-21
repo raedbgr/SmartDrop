@@ -15,6 +15,7 @@ export 'models/plantModel.dart';
 
 // views
 export 'views/login.dart';
+export 'views/register.dart';
 export 'views/navigation_page.dart';
 export 'views/dashboard.dart';
 export 'views/plants.dart';
@@ -32,3 +33,5 @@ export 'components/temp_humi_chart.dart';
 export 'components/gauge.dart';
 export 'components/custom_card.dart';
 export 'components/search_bar.dart';
+export 'components/input_field.dart';
+export 'components/fading_line.dart';
