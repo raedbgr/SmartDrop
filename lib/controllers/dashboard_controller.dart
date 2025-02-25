@@ -22,21 +22,20 @@ class DashboardController extends GetxController {
 
   // Function to fetch data from Firebase
   void fetchData() {
+    print("Fetched data: init "); // Debug
 
-    print("Fetched data: init "); // Debugg
-
-  _databaseRef.child('sensor_data').onValue.listen((event) {
+    _databaseRef.child('sensor_data').onValue.listen((event) {
       final data = event.snapshot.value as Map<dynamic, dynamic>?;
 
       if (data != null) {
         print("Fetched data: $data"); // Debugging
 
-        temperature.value = data['temperature'] ?? 0.0;
-        humidity.value = data['humidity'] ?? 0.0;
-        soilMoisture.value = data['soil_moisture'] ?? 0; // Debugging
-        waterLevel.value = data['water_level'] ?? 0; // Debugging
-        flowRate.value = data['flow_rate'] ?? 0.0;
-        totalLiters.value = data['total_liters'] ?? 0.0;
+        temperature.value = (data['temperature'] as num?)?.toDouble() ?? 0.0;
+        humidity.value = (data['humidity'] as num?)?.toDouble() ?? 0.0;
+        soilMoisture.value = data['soil_moisture'] ?? 0; // Already int
+        waterLevel.value = data['water_level'] ?? 0; // Already int
+        flowRate.value = (data['flow_rate'] as num?)?.toDouble() ?? 0.0;
+        totalLiters.value = (data['total_liters'] as num?)?.toDouble() ?? 0.0;
         irrigationStatus.value = data['irrigation_status'] ?? false;
         alarmStatus.value = data['alarm_status'] ?? false;
 
@@ -46,5 +45,4 @@ class DashboardController extends GetxController {
         print("No data found in Firebase!");
       }
     });
-  }
-}
+  }}

@@ -26,10 +26,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -57,7 +54,18 @@ class DefaultFirebaseOptions {
     appId: '1:390991137651:android:e10e3fc3b5b2c0f2a85306',
     messagingSenderId: '390991137651',
     projectId: 'smart-drop-54a2d',
-    storageBucket: 'smart-drop-54a2d.firebasestorage.app',
     databaseURL: 'https://smart-drop-54a2d-default-rtdb.europe-west1.firebasedatabase.app',
+    storageBucket: 'smart-drop-54a2d.firebasestorage.app',
   );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyDSZ81MxB0_kiObPfUNRikeGYhnXC1VhrQ',
+    appId: '1:390991137651:ios:68a603c6ce1c81eda85306',
+    messagingSenderId: '390991137651',
+    projectId: 'smart-drop-54a2d',
+    databaseURL: 'https://smart-drop-54a2d-default-rtdb.europe-west1.firebasedatabase.app',
+    storageBucket: 'smart-drop-54a2d.firebasestorage.app',
+    iosBundleId: 'com.example.smartDrop',
+  );
+
 }

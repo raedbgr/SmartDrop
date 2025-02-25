@@ -1,5 +1,7 @@
 import 'imports.dart';
 
+
+ DashboardController get dashCtrl => Get.find<DashboardController>();
 class MyBindings extends Bindings {
   @override
   void dependencies() {

@@ -42,7 +42,7 @@ class AuthController extends GetxController {
         print("Sign in successful ${userCredential.user!.uid}");
         emailController.clear();
         passwordController.clear();
-        confirmPasswordController.clear();
+        dashCtrl.fetchData();
         Get.offAllNamed('/');
       }
     } on FirebaseAuthException catch (e) {
