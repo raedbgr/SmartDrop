@@ -11,7 +11,7 @@ class MyCard extends StatelessWidget {
       color: const Color(0xFF35373b),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       child: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(10),
         child: child,
       ),
     );

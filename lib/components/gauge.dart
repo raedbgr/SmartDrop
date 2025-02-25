@@ -16,50 +16,52 @@ class Gauge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx( () {
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
-                width: 120,
-                height: 120,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: isTemp ? _getTemperatureColor(dashCtrl.temperature.value) : color,
-                    width: 3,
-                  ),
-                  shape: BoxShape.circle,
-                  color: const Color(0xFF35373b),
-                  boxShadow: [
-                    BoxShadow(
-                      color: isTemp
-                          ? _getTemperatureColor(dashCtrl.temperature.value).withOpacity(0.5)
-                          : color.withOpacity(0.5),
-                      blurRadius: 10,
-                      spreadRadius: 2,
-                    ),
-                  ],
+    return Obx(() {
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Container(
+              width: 120,
+              height: 120,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: isTemp
+                      ? _getTemperatureColor(dashCtrl.temperature.value)
+                      : color,
+                  width: 3,
                 ),
-                child: Center(
-                  child: isTemp
-                      ? Text(
-                          '${dashCtrl.temperature.value}°ᶜ',
-                          style: const TextStyle(
-                              fontSize: 28,
-                              fontWeight: FontWeight.w300,
-                              color: Colors.white),
-                        )
-                      : Text(
-                          '${dashCtrl.humidity.value}%',
-                          style: const TextStyle(
-                              fontSize: 28,
-                              fontWeight: FontWeight.w300,
-                              color: Colors.white),
-                        ),
-                )),
-          ],
-        );
-      }
-    );
+                shape: BoxShape.circle,
+                color: const Color(0xFF35373b),
+                boxShadow: [
+                  BoxShadow(
+                    color: isTemp
+                        ? _getTemperatureColor(dashCtrl.temperature.value)
+                            .withOpacity(0.5)
+                        : color.withOpacity(0.5),
+                    blurRadius: 10,
+                    spreadRadius: 2,
+                  ),
+                ],
+              ),
+              child: Center(
+                child: isTemp
+                    ? Text(
+                        '${dashCtrl.temperature.value.toInt()}°ᶜ',
+                        style: const TextStyle(
+                            fontSize: 28,
+                            fontWeight: FontWeight.w300,
+                            color: Colors.white),
+                      )
+                    : Text(
+                        '${dashCtrl.humidity.value.toInt()}%',
+                        style: const TextStyle(
+                            fontSize: 28,
+                            fontWeight: FontWeight.w300,
+                            color: Colors.white),
+                      ),
+              )),
+        ],
+      );
+    });
   }
 }

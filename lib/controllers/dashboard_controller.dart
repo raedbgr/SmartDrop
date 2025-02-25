@@ -17,7 +17,6 @@ class DashboardController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-
   }
 
   // Function to fetch data from Firebase
@@ -45,4 +44,5 @@ class DashboardController extends GetxController {
         print("No data found in Firebase!");
       }
     });
-  }}
+  }
+}

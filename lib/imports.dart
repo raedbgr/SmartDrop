@@ -1,6 +1,7 @@
 // packages
 export 'package:flutter/material.dart';
 export 'dart:math';
+export 'dart:async';
 export 'package:get/get.dart';
 export 'package:fl_chart/fl_chart.dart';
 export 'package:firebase_auth/firebase_auth.dart';
@@ -27,6 +28,8 @@ export 'controllers/auth_controller.dart';
 export 'controllers/navigation_controller.dart';
 export 'controllers/dashboard_controller.dart';
 export 'controllers/plants_controller.dart';
+export 'controllers/temp_hum_chart_controller.dart';
+export 'controllers/water_cnsm_controller.dart';
 
 // components
 export 'components/navbar.dart';

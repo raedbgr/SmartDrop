@@ -21,6 +21,7 @@ class AuthController extends GetxController {
         emailController.clear();
         passwordController.clear();
         confirmPasswordController.clear();
+        dashCtrl.fetchData();
         Get.offAllNamed('/'); // Navigate to home after registration
       }
 
