@@ -5,10 +5,12 @@ export 'package:get/get.dart';
 export 'package:fl_chart/fl_chart.dart';
 export 'package:firebase_auth/firebase_auth.dart';
 export 'package:firebase_core/firebase_core.dart';
+export 'package:firebase_database/firebase_database.dart';
 
 // misc
 export 'routes.dart';
 export 'bindings.dart';
+export 'firebase_options.dart';
 
 // models
 export 'models/plantModel.dart';

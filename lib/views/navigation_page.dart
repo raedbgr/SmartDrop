@@ -8,6 +8,7 @@ class NavigationPage extends StatefulWidget {
 class _NavigationPageState extends State<NavigationPage> {
   final NavigationController controller = Get.find();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final AuthController authCtrl = Get.find<AuthController>();
 
   @override
   void initState() {
@@ -30,6 +31,14 @@ class _NavigationPageState extends State<NavigationPage> {
               fontWeight: FontWeight.w300,
             ),
           ),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  authCtrl.signOut();
+                },
+                icon: const Icon(Icons.exit_to_app_rounded, color: Color(0xfffdfefe))
+            )
+          ],
         ),
         body: SafeArea(child: controller.getScreen(controller.selectedPage.value, _scaffoldKey)),
         bottomNavigationBar: MyNavBar(),

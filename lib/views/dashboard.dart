@@ -11,6 +11,11 @@ class DashboardPage extends StatefulWidget {
 class _DashboardPageState extends State<DashboardPage> {
   final DashboardController dashCtrl = Get.find();
 
+  initState() {
+    dashCtrl.fetchData();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -115,7 +120,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                   fontWeight: FontWeight.w300)),
                         ],
                       ),
-                      Text('${dashCtrl.soilMoisture}%',
+                      Text('${dashCtrl.soilMoisture.value}%',
                           style: const TextStyle(
                               color: Color(0xff006fff),
                               fontSize: 36,
@@ -144,7 +149,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                   fontWeight: FontWeight.w300)),
                         ],
                       ),
-                      Text('${dashCtrl.waterFlow}%',
+                      Text('${dashCtrl.flowRate.value}%',
                           style: const TextStyle(
                               color: Color(0xff006fff),
                               fontSize: 36,
@@ -173,7 +178,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                   fontWeight: FontWeight.w300)),
                         ],
                       ),
-                      Text('${dashCtrl.waterLevel}%',
+                      Text('${dashCtrl.waterLevel.value}%',
                           style: const TextStyle(
                               color: Color(0xff006fff),
                               fontSize: 36,
@@ -184,42 +189,42 @@ class _DashboardPageState extends State<DashboardPage> {
               ],
             ),
             // Temperature & Humidity Chart
-            MyCard(
-                child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              spacing: 30,
-              children: [
-                const Text("Temperature & Humidity Trend",
-                    style: TextStyle(
-                        color: Color(0xfffdfefe),
-                        fontSize: 18,
-                        fontWeight: FontWeight.w300)),
-                SizedBox(
-                  height: 200,
-                  child: TempHumiChart(
-                      temperatureData: dashCtrl.temperatureData,
-                      humidityData: dashCtrl.humidityData),
-                ),
-              ],
-            )),
+            // MyCard(
+            //     child: Column(
+            //   crossAxisAlignment: CrossAxisAlignment.stretch,
+            //   spacing: 30,
+            //   children: [
+            //     const Text("Temperature & Humidity Trend",
+            //         style: TextStyle(
+            //             color: Color(0xfffdfefe),
+            //             fontSize: 18,
+            //             fontWeight: FontWeight.w300)),
+            //     SizedBox(
+            //       height: 200,
+            //       child: TempHumiChart(
+            //           temperatureData: dashCtrl.temperatureData,
+            //           humidityData: dashCtrl.humidityData),
+            //     ),
+            //   ],
+            // )),
             // Water Consumption Chart
-            MyCard(
-                child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              spacing: 30,
-              children: [
-                const Text("Water Consumption",
-                    style: TextStyle(
-                        color: Color(0xfffdfefe),
-                        fontSize: 18,
-                        fontWeight: FontWeight.w300)),
-                SizedBox(
-                  height: 200,
-                  child: WaterConsumptionChart(
-                      waterConsumption: dashCtrl.waterConsumption),
-                ),
-              ],
-            )),
+            // MyCard(
+            //     child: Column(
+            //   crossAxisAlignment: CrossAxisAlignment.stretch,
+            //   spacing: 30,
+            //   children: [
+            //     const Text("Water Consumption",
+            //         style: TextStyle(
+            //             color: Color(0xfffdfefe),
+            //             fontSize: 18,
+            //             fontWeight: FontWeight.w300)),
+            //     SizedBox(
+            //       height: 200,
+            //       child: WaterConsumptionChart(
+            //           waterConsumption: dashCtrl.waterConsumption),
+            //     ),
+            //   ],
+            // )),
           ],
         ),
       ),

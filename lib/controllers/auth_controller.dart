@@ -18,6 +18,9 @@ class AuthController extends GetxController {
 
       if (user != null) {
         print("User registered: ${user.email}");
+        emailController.clear();
+        passwordController.clear();
+        confirmPasswordController.clear();
         Get.offAllNamed('/'); // Navigate to home after registration
       }
 
@@ -37,6 +40,9 @@ class AuthController extends GetxController {
       );
       if (userCredential.user != null) {
         print("Sign in successful ${userCredential.user!.uid}");
+        emailController.clear();
+        passwordController.clear();
+        confirmPasswordController.clear();
         Get.offAllNamed('/');
       }
     } on FirebaseAuthException catch (e) {

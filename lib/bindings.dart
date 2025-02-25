@@ -6,9 +6,10 @@ class MyBindings extends Bindings {
     // Created at start
     Get.put(AuthController());
     Get.put(NavigationController());
+    Get.put(DashboardController());
 
     // Created when needed
-    Get.lazyPut<DashboardController>(() => DashboardController());
+    // Get.lazyPut<DashboardController>(() => DashboardController());
     Get.lazyPut<PlantsController>(() => PlantsController());
   }
 }

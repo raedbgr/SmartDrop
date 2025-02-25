@@ -1,28 +1,50 @@
 import '/imports.dart';
 
 class DashboardController extends GetxController {
-  final double temperature = 37.0;
-  final double humidity = 65.0;
-  final int soilMoisture = 45;
-  final int waterFlow = 30;
-  final int waterLevel = 50;
-  final List<double> temperatureData = [
-    19.0,
-    30.0,
-    8.0,
-    37.0,
-    28.0,
-    11.0,
-    17.0
-  ];
-  final List<double> humidityData = [30.0, 61.0, 40.0, 33.0, 28.0, 75.0, 55.0];
-  final List<double> waterConsumption = [
-    8.5,
-    10.2,
-    40.1,
-    20.2,
-    20.9,
-    33.1,
-    24.7
-  ];
+// Variables to store sensor data
+  var temperature = 0.0.obs;
+  var humidity = 0.0.obs;
+  var soilMoisture = 0.obs;
+  var waterLevel = 0.obs;
+  var flowRate = 0.0.obs;
+  var totalLiters = 0.0.obs;
+  var irrigationStatus = false.obs;
+  var alarmStatus = false.obs;
+
+  // Reference to Firebase Realtime Database
+  final DatabaseReference _databaseRef = FirebaseDatabase.instance.ref();
+
+  @override
+  void onInit() {
+    super.onInit();
+
+  }
+
+  // Function to fetch data from Firebase
+  void fetchData() {
+
+    print("Fetched data: init "); // Debugg
+
+  _databaseRef.child('sensor_data').onValue.listen((event) {
+      final data = event.snapshot.value as Map<dynamic, dynamic>?;
+
+      if (data != null) {
+        print("Fetched data: $data"); // Debugging
+
+        temperature.value = data['temperature'] ?? 0.0;
+        humidity.value = data['humidity'] ?? 0.0;
+        soilMoisture.value = data['soil_moisture'] ?? 0; // Debugging
+        waterLevel.value = data['water_level'] ?? 0; // Debugging
+        flowRate.value = data['flow_rate'] ?? 0.0;
+        totalLiters.value = data['total_liters'] ?? 0.0;
+        irrigationStatus.value = data['irrigation_status'] ?? false;
+        alarmStatus.value = data['alarm_status'] ?? false;
+
+        print("Soil Moisture: ${soilMoisture.value}"); // Debugging
+        print("Water Level: ${waterLevel.value}"); // Debugging
+      } else {
+        print("No data found in Firebase!");
+      }
+    });
+  }
 }

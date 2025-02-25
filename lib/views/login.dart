@@ -66,10 +66,17 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          authCtrl.signIn(
-                            authCtrl.emailController.text,
-                            authCtrl.passwordController.text,
-                          );
+                          if (authCtrl.emailController.text.isEmpty ||
+                              authCtrl.passwordController.text.isEmpty) {
+                            Get.snackbar("Error", "Please fill all fields",
+                                snackPosition: SnackPosition.BOTTOM);
+                            return;
+                          } else {
+                            authCtrl.signIn(
+                              authCtrl.emailController.text,
+                              authCtrl.passwordController.text,
+                            );
+                          }
                         },
                         child: Container(
                           padding: const EdgeInsets.all(10),
@@ -91,32 +98,6 @@ class _LoginPageState extends State<LoginPage> {
                               fontWeight: FontWeight.w300,
                             ),
                           ),
-                        ),
-                      ),
-                      const FadingLinesSeparator(text: 'OR'),
-                      Container(
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          color: const Color(0xff242529),
-                          borderRadius: BorderRadius.circular(15),
-                          border: Border.all(color: const Color(0xFFb3c3c0)),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          spacing: 10,
-                          children: [
-                            Image.asset(
-                              "assets/google_icon.png",
-                              width: 30,
-                              height: 30,
-                            ),
-                            const Text('Login with Google',
-                                style: TextStyle(
-                                  color: Color(0xfffdfefe),
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w300,
-                                )),
-                          ],
                         ),
                       ),
                       const SizedBox(height: 10),

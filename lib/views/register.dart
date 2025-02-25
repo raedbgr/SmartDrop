@@ -53,11 +53,16 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          if (authCtrl.passwordController.text !=
+                          if (authCtrl.emailController.text.isEmpty ||
+                              authCtrl.passwordController.text.isEmpty ||
+                              authCtrl.confirmPasswordController.text.isEmpty) {
+                            Get.snackbar("Error", "Please fill all fields",
+                                snackPosition: SnackPosition.BOTTOM);
+                            return;
+                          } else if (authCtrl.passwordController.text !=
                               authCtrl.confirmPasswordController.text) {
                             Get.snackbar("Error", "Passwords do not match",
                                 snackPosition: SnackPosition.BOTTOM);
-                            return;
                           } else {
                             authCtrl.register(
                               authCtrl.emailController.text,
@@ -85,32 +90,6 @@ class _RegisterPageState extends State<RegisterPage> {
                               fontWeight: FontWeight.w300,
                             ),
                           ),
-                        ),
-                      ),
-                      const FadingLinesSeparator(text: 'OR'),
-                      Container(
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          color: const Color(0xff242529),
-                          borderRadius: BorderRadius.circular(15),
-                          border: Border.all(color: const Color(0xFFb3c3c0)),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          spacing: 10,
-                          children: [
-                            Image.asset(
-                              "assets/google_icon.png",
-                              width: 30,
-                              height: 30,
-                            ),
-                            const Text('Register with Google',
-                                style: TextStyle(
-                                  color: Color(0xfffdfefe),
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w300,
-                                )),
-                          ],
                         ),
                       ),
                       const SizedBox(height: 10),

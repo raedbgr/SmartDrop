@@ -58,5 +58,6 @@ class DefaultFirebaseOptions {
     messagingSenderId: '390991137651',
     projectId: 'smart-drop-54a2d',
     storageBucket: 'smart-drop-54a2d.firebasestorage.app',
+    databaseURL: 'https://smart-drop-54a2d-default-rtdb.europe-west1.firebasedatabase.app',
   );
 }

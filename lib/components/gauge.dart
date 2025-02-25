@@ -25,7 +25,7 @@ class Gauge extends StatelessWidget {
             height: 120,
             decoration: BoxDecoration(
               border: Border.all(
-                color: isTemp ? _getTemperatureColor(dashCtrl.temperature) : color,
+                color: isTemp ? _getTemperatureColor(dashCtrl.temperature.value) : color,
                 width: 3,
               ),
               shape: BoxShape.circle,
@@ -33,7 +33,7 @@ class Gauge extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   color: isTemp
-                      ? _getTemperatureColor(dashCtrl.temperature).withOpacity(0.5)
+                      ? _getTemperatureColor(dashCtrl.temperature.value).withOpacity(0.5)
                       : color.withOpacity(0.5),
                   blurRadius: 10,
                   spreadRadius: 2,
@@ -43,14 +43,14 @@ class Gauge extends StatelessWidget {
             child: Center(
               child: isTemp
                   ? Text(
-                      '${dashCtrl.temperature.toInt()}°ᶜ',
+                      '${dashCtrl.temperature.value}°ᶜ',
                       style: const TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.w300,
                           color: Colors.white),
                     )
                   : Text(
-                      '${dashCtrl.humidity.toInt()}%',
+                      '${dashCtrl.humidity.value}%',
                       style: const TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.w300,
