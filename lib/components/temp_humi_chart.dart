@@ -18,6 +18,8 @@ class TempHumiChart extends StatelessWidget {
                   sideTitles: SideTitles(
                     showTitles: true,
                     reservedSize: 40,
+                    minIncluded: true,
+                    maxIncluded: false,
                     getTitlesWidget: (value, meta) {
                       return Text('${value.toInt()}°C',
                           style: const TextStyle(fontSize: 12, color: Color(0xfffdfefe)));
