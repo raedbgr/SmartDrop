@@ -195,53 +195,88 @@ class _DashboardPageState extends State<DashboardPage> {
                                     fontWeight: FontWeight.w300)),
                           ],
                         ),
-                        Text('${dashCtrl.waterLevel.value}',
-                            style: const TextStyle(
-                                color: Color(0xff006fff),
-                                fontSize: 30,
-                                fontWeight: FontWeight.w300)),
+                        Row(
+                          children: [
+                            Text('${dashCtrl.waterLevel.value}',
+                                style: const TextStyle(
+                                    color: Color(0xff006fff),
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.w300)),
+                            Text(
+                                dashCtrl.waterLevel.value > 0
+                                    ? 'cm'
+                                    : 'cm (Empty)',
+                                style: const TextStyle(
+                                    color: Color(0xfffdfefe),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300))
+                          ],
+                        ),
                       ],
                     )),
                   ),
                 ],
               ),
-              MyCard(
-                  child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Row(
-                      children: [
-                        Icon(Icons.water_drop_rounded,
-                            color: Color(0xff006fff), size: 40),
-                        SizedBox(width: 10),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Irrigation",
-                                style: TextStyle(
-                                    color: Color(0xfffdfefe),
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w300)),
-                          ],
-                        ),
-                      ],
-                    ),
-                    dashCtrl.irrigationStatus.value
-                        ? const Text('On',
-                            style: TextStyle(
-                                color: Color(0xff006fff),
-                                fontSize: 20,
-                                fontWeight: FontWeight.w300))
-                        : const Text('Off',
-                            style: TextStyle(
-                                color: Color(0xff006fff),
-                                fontSize: 20,
-                                fontWeight: FontWeight.w300)),
-                  ],
-                ),
-              )),
+              GestureDetector(
+                onTap: () {},
+                child: MyCard(
+                    child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Row(
+                        children: [
+                          Icon(Icons.water_drop_rounded,
+                              color: Color(0xff006fff), size: 40),
+                          SizedBox(width: 10),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Irrigation",
+                                  style: TextStyle(
+                                      color: Color(0xfffdfefe),
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w300)),
+                            ],
+                          ),
+                        ],
+                      ),
+                      dashCtrl.irrigationStatus.value
+                          ? const Row(
+                        spacing: 10,
+                            children: [
+                              Text('ON',
+                                  style: TextStyle(
+                                      color: Color(0xff006fff),
+                                      fontSize: 26,
+                                      fontWeight: FontWeight.w400)),
+                              Text('OFF',
+                                  style: TextStyle(
+                                      color: Color(0xfffdfefe),
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w300)),
+                            ],
+                          )
+                          : const Row(
+                        spacing: 10,
+                            children: [
+                              Text('ON',
+                                  style: TextStyle(
+                                      color: Color(0xfffdfefe),
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w300)),
+                              Text('OFF',
+                                  style: TextStyle(
+                                      color: Color(0xff006fff),
+                                      fontSize: 26,
+                                      fontWeight: FontWeight.w300)),
+                            ],
+                          ),
+                    ],
+                  ),
+                )),
+              ),
               // Temperature & Humidity Chart
               MyCard(
                   child: Column(
