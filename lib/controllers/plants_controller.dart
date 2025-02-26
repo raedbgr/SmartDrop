@@ -1,7 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import '/imports.dart';
 
 class PlantsController extends GetxController {
   TextEditingController searchController = TextEditingController();
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   RxList<PlantModel> searchList = <PlantModel>[].obs;
   String searchPlantText = '';
   final List<PlantModel> plants = [
@@ -20,5 +22,25 @@ class PlantsController extends GetxController {
   void updateSearchList(String searchText) {
     searchList.assignAll(plants.where((element) =>
         element.name.toLowerCase().contains(searchText.toLowerCase())).toList());
+  }
+
+  Future<void> uploadPlantsToFirestore() async {
+    try {
+      // Reference to Firestore collection
+      CollectionReference plantsCollection = _firestore.collection('plants');
+
+      // Uploading each plant to Firestore
+      for (var plant in plants) {
+        await plantsCollection.doc(plant.id.toString()).set({
+          'name': plant.name,
+          'recTemp': plant.recTemp,
+          'recHum': plant.recHum,
+          'recSoil': plant.recSoil,
+        });
+      }
+      print('Plants uploaded successfully');
+    } catch (e) {
+      print('Error uploading plants: $e');
+    }
   }
 }

@@ -44,6 +44,7 @@ class AuthController extends GetxController {
         emailController.clear();
         passwordController.clear();
         dashCtrl.fetchData();
+        // plantsCtrl.uploadPlantsToFirestore();
         Get.offAllNamed('/');
       }
     } on FirebaseAuthException catch (e) {

@@ -11,6 +11,7 @@ export 'package:firebase_database/firebase_database.dart';
 // misc
 export 'routes.dart';
 export 'bindings.dart';
+export 'constants.dart';
 export 'firebase_options.dart';
 
 // models
