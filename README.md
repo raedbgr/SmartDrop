@@ -52,8 +52,10 @@ Smart Drop is an IoT-based irrigation and plant care system designed to optimize
 
 1️⃣ Clone the Repository
 
-```git clone https://github.com/raedbgr/SmartDrop.git```
-```cd smart-drop```
+```
+  git clone https://github.com/raedbgr/SmartDrop.git
+  cd smart-drop
+```
 
 2️⃣ Install Dependencies
 
@@ -63,7 +65,9 @@ For Arduino:
 
 For Flutter (if applicable):
 
-flutter pub get
+```
+  flutter pub get
+```
 
 3️⃣ Upload Code to Microcontroller
 
@@ -71,6 +75,6 @@ Use the Arduino IDE or PlatformIO to flash the code onto your ESP8266/ESP32.
 
 4️⃣ Run the Application
 
-If there is a web or mobile interface:
-
-flutter run
+```
+  flutter run
+```
