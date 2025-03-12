@@ -62,7 +62,7 @@ Smart Drop is an IoT-based irrigation and plant care system designed to optimize
 For Arduino:
 
 Install required libraries in Arduino IDE
-The Arduino `.ino` file can be found [here](firmware/SmartDrop.ino).
+The Arduino `.ino` file can be found [here](firmware/smartdrop.ino).
 
 For Flutter:
 
