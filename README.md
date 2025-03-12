@@ -16,44 +16,44 @@ Smart Drop is an IoT-based irrigation and plant care system designed to optimize
 
 ### 📊 Data Visualization
 
-Bar Chart for Water Consumption: Displays daily water usage.
+- Bar Chart for Water Consumption: Displays daily water usage.
 
-Line Chart for Temperature & Humidity Trends: Shows environmental changes over time.
+- Line Chart for Temperature & Humidity Trends: Shows environmental changes over time.
 
 ### 🌿 Plant Database & Recommendations
 
-Plant List Page: A catalog of plants with specific environmental requirements.
+- Plant List Page: A catalog of plants with specific environmental requirements.
 
-Plant Details Popup: Tapping on a plant shows recommended temperature, humidity, and soil moisture levels.
+- Plant Details Popup: Tapping on a plant shows recommended temperature, humidity, and soil moisture levels.
 
 ### 🔧 Hardware Components
 
-Soil moisture sensor
+- Soil moisture sensor
 
-Temperature and humidity sensor (DHT11)
+- Temperature and humidity sensor (DHT11)
 
-Water flow sensor (YF-S401)
+- Water flow sensor (YF-S401)
 
-Water level sensor (CAP-028)
+- Water level sensor (CAP-028)
 
-Microcontroller (ESP32-WROOM-32D)
+- Microcontroller (ESP32-WROOM-32D)
 
-Irrigation Kit
+- Irrigation Kit
 
 ### 💻 Software & Tools Used
 
-Embedded Programming: Arduino IDE
+- Embedded Programming: Arduino IDE
 
-Frontend: Flutter 
+- Frontend: Flutter 
 
-Database: Firebase
+- Database: Firebase
 
 ### 🚀 Getting Started
 
 1️⃣ Clone the Repository
 
-git clone https://github.com/raedbgr/SmartDrop.git
-cd smart-drop
+```git clone https://github.com/raedbgr/SmartDrop.git```
+```cd smart-drop```
 
 2️⃣ Install Dependencies
 
