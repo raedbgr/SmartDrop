@@ -6,16 +6,16 @@
 #include <addons/RTDBHelper.h>
 
 // WiFi credentials
-const char* WIFI_SSID = "Campus";
-const char* WIFI_PASSWORD = "@$t21**@";
+const char* WIFI_SSID = "YOUR_SSID";
+const char* WIFI_PASSWORD = "YOUR_PASS";
 
 // Firebase project settings
-#define API_KEY "AIzaSyBc5kibIqr4bJL6ednnVc-c8TgkAHutsI8"
-#define DATABASE_URL "https://smart-drop-54a2d-default-rtdb.europe-west1.firebasedatabase.app/"
+#define API_KEY "YOUR_API_KEY"
+#define DATABASE_URL "YOUR_DB_URL"
 
 // Firebase Auth
-#define USER_EMAIL "smartdrop@test.com"
-#define USER_PASSWORD "123456"
+#define USER_EMAIL "YOUR_CREDS"
+#define USER_PASSWORD "YOUR_CREDS"
 
 // Define Firebase Data object
 FirebaseData fbdo;
