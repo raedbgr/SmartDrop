@@ -1,6 +1,6 @@
 # Smart Drop - IoT Irrigation and Plant Care System
 
-Smart Drop is an IoT-based irrigation and plant care system designed to optimize water consumption while ensuring ideal conditions for plant growth. It monitors environmental factors and provides insightful data visualization to help users maintain healthy plants efficiently.
+Smart Drop is an IoT-based irrigation and plant care system designed to optimize water consumption while ensuring ideal conditions for plant growth. It monitors environmental factors in RealTime and provides insightful data visualization to help users maintain healthy plants efficiently.
 
 ## Features
 
@@ -61,9 +61,9 @@ Smart Drop is an IoT-based irrigation and plant care system designed to optimize
 
 For Arduino:
 
-#### Install required libraries in Arduino IDE
+Install required libraries in Arduino IDE
 
-For Flutter (if applicable):
+For Flutter:
 
 ```
   flutter pub get
@@ -71,7 +71,7 @@ For Flutter (if applicable):
 
 3️⃣ Upload Code to Microcontroller
 
-Use the Arduino IDE or PlatformIO to flash the code onto your ESP8266/ESP32.
+Use the Arduino IDE or PlatformIO to flash the code onto your ESP32.
 
 4️⃣ Run the Application
 
